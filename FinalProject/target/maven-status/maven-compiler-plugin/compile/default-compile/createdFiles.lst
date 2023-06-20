@@ -1,0 +1,3 @@
+config\SpringSecurityConfiguration.class
+config\RegisterSecurityFilter.class
+config\AppConfiguration.class
