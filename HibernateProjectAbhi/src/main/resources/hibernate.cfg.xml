@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        " http://www.hibernate.org/dtd/hibernate-configuration/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@10.1.50.198:1535:nsbt19c</property>
+        <property name="hibernate.connection.username">training</property>
+        <property name="hibernate.connection.password">training</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle12cDialect</property>
+        <property name="show_sql">true</property>
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        <property name="hbm2ddl.auto">create</property>
+        <!-- Enable the second-level cache -->
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        <property name="hibernate.cache.use_query_cache">false</property>
+        <!--To be Added in hibernate.cfg.xml for caching-->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+
+        <!--Here we will give the mapping of LoanAgreement-->
+        <mapping package="model"/>
+        <mapping class="model.Customer"/>
+
+    </session-factory>
+</hibernate-configuration>
